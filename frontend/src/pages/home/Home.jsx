@@ -10,8 +10,13 @@ import { TbDeviceImacHeart } from "react-icons/tb";
 
 import "./style.css"
 import ImgDataBox from './imgDataBox/ImgDataBox'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 function Home() {
+    const navigate = useNavigate();
     return (
         <>
             <Carousel />
@@ -37,7 +42,7 @@ function Home() {
 
 
                 <div className="homeButton">
-                    <div className='viewAll'>View All</div>
+                    <div className='viewAll' onClick={() => { navigate('/items'); window.scrollTo(0, 0) }}>View All</div>
                 </div>
 
             </div>

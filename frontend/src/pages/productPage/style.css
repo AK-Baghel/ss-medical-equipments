@@ -40,6 +40,7 @@
 
 .productPageBox2Section1Text {
     font-size: 1.1rem;
+    line-height: 2rem;
 }
 
 .productPageBox2Section1Heading {
@@ -57,6 +58,26 @@
     cursor: pointer;
 
 }
+
+.youMayLike {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    /* width: 65rem; */
+    padding: 0.3rem 4rem;
+    /* margin-block: 1rem; */
+
+}
+
+.productPageBox3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 
 @media (max-width:750px) {
     .productImage {

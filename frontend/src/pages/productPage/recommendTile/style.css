@@ -1,0 +1,49 @@
+.recommendTileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: fit-content;
+    border: 1px solid #008081;
+    border-radius: 15px;
+    padding-block: 1rem;
+}
+
+.recommendTileContainer:hover {
+    border-color: orange;
+}
+
+.recommendTileImg {
+    width: 150px;
+}
+
+.recommendTileText {
+    font-weight: 600;
+    color: #008081;
+    font-size: 1rem;
+}
+
+.recommendTileDesc {
+    width: 20rem;
+    padding-inline: 1rem;
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+
+}
+
+.recommendTileButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.recommendTileButton {
+    padding: 5px 15px;
+    background-color: #008081;
+    color: white;
+    cursor: pointer;
+}
+
+.recommendTileButton:hover {
+    text-decoration: underline;
+}

@@ -3,10 +3,15 @@ import "./style.css"
 import { IoClose } from "react-icons/io5"
 import Form from '../../components/form/Form'
 import { useParams } from 'react-router-dom'
+import RecommendProduct from './recommendProduct/RecommendProduct'
+import RecommendTile from './recommendTile/RecommendTile'
+
+import { useNavigate } from 'react-router-dom'
 
 
 function ProductPage() {
 
+    const navigate = useNavigate();
     const [showForm, setShowForm] = useState(false)
     const { title } = useParams();
 
@@ -47,6 +52,19 @@ function ProductPage() {
 
                 </div>
 
+                <div className="youMayLike">You May Also Like</div>
+
+                <div className="productPageBox3">
+                    <RecommendTile />
+                    <RecommendTile />
+                    <RecommendTile />
+                </div>
+
+                <div className="homeButton">
+                    <div className='viewAll' onClick={() => { navigate('/items'); window.scrollTo(0, 0) }}>View All Items</div>
+                </div>
+
+
 
                 {
                     showForm &&
@@ -77,7 +95,6 @@ function ProductPage() {
                         </div>
                     </>
                 }
-
 
             </div>
 
