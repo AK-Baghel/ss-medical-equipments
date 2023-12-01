@@ -1,0 +1,36 @@
+.aboutTiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+    margin-block: 4rem;
+}
+
+.aboutTiles2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 3rem 3rem;
+}
+
+.aboutTrans {
+    /* background-color: #F6F6F6; */
+    background-color: #d8d8d8;
+    color: #6b6b6b;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0rem 2rem 0rem;
+}
+
+.aboutTransText {
+    font-size: 2.4rem;
+    /* color: #126ccc; */
+    color: black;
+    border-bottom: 2px solid #008081;
+    padding-bottom: 1rem;
+}

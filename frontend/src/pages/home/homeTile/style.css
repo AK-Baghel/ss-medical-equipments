@@ -1,0 +1,47 @@
+.aboutTileContainer {
+    width: fit-content;
+    background-color: white;
+    border: 1px solid #008081;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #008081;
+    padding: 1.5rem;
+    gap: 1rem;
+    height: 300px;
+}
+
+.aboutTileContainer:hover {
+    color: orange;
+    border-color: orange;
+}
+
+.aboutTileBox1 {
+    font-size: 4rem;
+}
+
+.aboutTileBox2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.aboutTileBox3 {
+    color: rgb(68, 68, 68);
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    max-width: 23vw;
+}
+
+
+@media(max-width:700px) {
+    .aboutTileBox3 {
+        color: rgb(68, 68, 68);
+        text-align: center;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+        max-width: 75vw;
+    }
+}
