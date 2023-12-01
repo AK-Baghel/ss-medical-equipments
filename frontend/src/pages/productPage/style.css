@@ -1,0 +1,170 @@
+.aboutBanner {
+    background-color: #008081;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    padding: 5rem 1rem;
+    font-size: 3rem;
+}
+
+.productPageSection1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 3rem;
+    margin-block: 2rem;
+}
+
+.productPageBox2 {
+    display: flex;
+    gap: 3rem;
+    /* padding: 10rem; */
+    /* justify-content: space-between; */
+}
+
+.productPageBox2Section1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 50vw;
+    padding-inline: 1rem;
+}
+
+.productImage {
+    width: 20rem;
+    /* height: 80vh; */
+}
+
+.productPageBox2Section1Text {
+    font-size: 1.1rem;
+}
+
+.productPageBox2Section1Heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #008081;
+}
+
+.productPageBox2Section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    cursor: pointer;
+
+}
+
+@media (max-width:750px) {
+    .productImage {
+        width: 60vw;
+
+    }
+
+    .productPageBox2Section2 {
+        /* flex-direction: row; */
+        gap: 2rem;
+    }
+
+    .productPageBox2 {
+        flex-direction: column;
+    }
+
+    .productPageBox2Section1 {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .aboutTransText {
+        text-align: center;
+    }
+
+
+}
+
+
+
+.enquireBlackContainer {
+    background-color: rgba(0, 0, 0, 0.596);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.enquireContainer {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+    /* gap: 1rem; */
+}
+
+.enquireSection1 {
+    /* font-size: 1rem; */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: #005F60;
+}
+
+.enquireSection1Text {
+    font-size: 1rem;
+}
+
+.formClose {
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+.enquireSection2 {
+    display: flex;
+    padding: 1rem;
+}
+
+.enquireTitle {
+    /* font-size: 2rem; */
+    color: #005F60;
+    font-weight: 800;
+}
+
+.enquireSection2Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enquireImage {
+    width: 20rem;
+}
+
+.enquireSection2Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width:715px) {
+
+    .enquireImage {
+        width: 30vw;
+    }
+
+    .enquireSection2 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
