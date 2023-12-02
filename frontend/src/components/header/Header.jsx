@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import "./style.css"
 import { FaBars } from "react-icons/fa6"
 import { RiArrowDropDownLine } from "react-icons/ri"
+import { FaArrowUp } from "react-icons/fa";
+
 
 import logo from "../../assets/logo.jpg"
 
@@ -34,6 +36,7 @@ const Header = () => {
         navigate(`/product/${value}`);
         window.scrollTo(0, 0)
         setPopUp(false)
+        setShow(true)
     }
 
 
@@ -79,6 +82,7 @@ const Header = () => {
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("Commode Chair") }}>Commode Chair</li>
 
                                 </ul>
+                                <div className="headerPopUpBoxButton" onClick={() => { navigate('/items'); window.scrollTo(0, 0); setPopUp(false) }}>View All Items</div>
                             </div>
                         }
 
@@ -95,6 +99,17 @@ const Header = () => {
             {
                 show ? <FaBars className="headerBar" onClick={toggleBar} /> : <IoClose className=" headerBar headerCross" onClick={toggleBar} />
             }
+
+
+            <div className="fixedUpButton" onClick={() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                })
+            }}>
+                <FaArrowUp />
+
+            </div>
 
         </div>
     )

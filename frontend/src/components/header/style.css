@@ -140,7 +140,7 @@ body {
 }
 
 .headerPopUpBoxItems {
-    /* background-color: rgb(252, 203, 210); */
+    /* background-color: rgb(212, 0, 32); */
     background-color: white;
     /* color: rgb(65, 65, 65); */
     color: black;
@@ -239,6 +239,31 @@ body {
 .hoverUnderline:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.headerPopUpBoxButton {
+    color: white;
+    background-color: #008081;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.headerPopUpBoxButton:hover {
+    text-decoration: underline;
+}
+
+.fixedUpButton {
+    position: fixed;
+    background-color: #027F81;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+    color: white;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 

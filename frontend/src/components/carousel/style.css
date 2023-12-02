@@ -52,10 +52,13 @@
         display: none;
     } */
 
-    .new {
+    /* .new {
         object-fit: cover;
-        /* width: 200%; */
-        /* height: 85vh; */
+    } */
+
+    .new {
+
+        height: 40vh;
     }
 
 }

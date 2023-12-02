@@ -4,17 +4,24 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-block: 1rem;
+    line-height: 1.7rem;
+    width: 90vw;
+    margin: 2rem auto;
 }
 
 .homeSection1Heading {
+    line-height: 2.2rem;
     font-size: 2.2rem;
-    padding-block: 1rem;
+    /* padding-block: 1rem; */
     font-weight: 700;
     text-align: center;
+    color: #008081;
 }
 
 .homeSection1Title {
+    color: #008081;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
@@ -23,7 +30,22 @@
 
 .homeSection1Text {
     text-align: center;
-    font-size: 0.9rem;
-    color: #707070;
+    font-size: 1rem;
+    /* padding-inline: 2rem; */
+    color: #363636;
+    /* font-weight: 600; */
+
+}
+
+@media (max-width:500px) {
+
+    .homeSection1Heading {
+        line-height: 2.2rem;
+        font-size: 1.6rem;
+        /* padding-block: 1rem; */
+        font-weight: 700;
+        text-align: center;
+        color: #008081;
+    }
 
 }
