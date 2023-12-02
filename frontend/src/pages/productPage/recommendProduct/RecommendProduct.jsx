@@ -5,20 +5,23 @@ import "./style.css"
 function RecommendProduct() {
     return (
         <div className="recommendProductContainer">
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
-            <RecommendTile />
+            <div className="recommendProductBanner">SS Medical Equipments</div>
+            <div className="recommendProductBox">
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+                <RecommendTile />
+            </div>
         </div>
     )
 }

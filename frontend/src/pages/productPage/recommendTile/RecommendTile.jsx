@@ -2,9 +2,17 @@ import React, { useState } from 'react'
 import "./style.css"
 import { IoClose } from "react-icons/io5"
 import Form from '../../../components/form/Form'
+import { useNavigate } from 'react-router-dom'
 
 function RecommendTile() {
+    const navigate = useNavigate();
+
     const [showForm, setShowForm] = useState(false)
+    const openPage = (value) => {
+        navigate(`/product/${value}`);
+        window.scrollTo(0, 0);
+    }
+
     return (
         <div className="recommendTileContainer">
             <img className="recommendTileImg" src="https://images.jdmagicbox.com/quickquotes/images_main/mini-portable-oxygen-concentrator-2184655529-5ml65t7d.jpg" alt="" />
@@ -13,11 +21,11 @@ function RecommendTile() {
                 An Oxygen Cylinder is a non-reactive, high-pressure, seamless tempered steel container in which compressed oxygen gas is kept.
             </div>
             <div className="recommendTileButtons">
-                <div className="recommendTileButton">Read More</div>
+                <div className="recommendTileButton" onClick={() => { openPage('Digital BP Monitor ') }}>Read More</div>
                 <div className="recommendTileButton" onClick={() => { setShowForm(!showForm) }}>Enquire Now</div>
             </div>
 
-            {/* {
+            {
                 showForm &&
 
                 <>
@@ -45,7 +53,7 @@ function RecommendTile() {
 
                     </div>
                 </>
-            } */}
+            }
 
         </div>
     )

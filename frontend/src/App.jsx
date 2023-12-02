@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer"
 import ProductPage from "./pages/productPage/ProductPage"
 // import RecommendTile from "./pages/productPage/recommendTile/RecommendTile"
 import RecommendProduct from "./pages/productPage/recommendProduct/RecommendProduct"
+import Contact from "./components/contact/Contact"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/items' element={<RecommendProduct />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path="/product/:title" element={<ProductPage />} />
       </Routes>
       <Footer />

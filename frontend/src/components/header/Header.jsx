@@ -30,6 +30,12 @@ const Header = () => {
         setPopUp(false)
     }
 
+    const openPage = (value) => {
+        navigate(`/product/${value}`);
+        window.scrollTo(0, 0)
+        setPopUp(false)
+    }
+
 
     return (
         <div className="headerContainer">
@@ -49,28 +55,28 @@ const Header = () => {
                         <div className={`headerItem hoverUnderline ${location.pathname === "/" ? "active" : ""}`} onClick={() => { routing("/") }}>HOME</div>
                         <div className={`headerItem hoverUnderline ${location.pathname === "/about" ? "active" : ""}`} onClick={() => { routing("/about") }} >ABOUT US</div>
 
-                        <div className="headerItem headerDrop" onClick={() => { setPopUp(!popUp) }} onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>MEDICAL EQUIPMENT ON RENT<RiArrowDropDownLine className="headerDropDown" /></div>
+                        <div className="headerItem headerDrop" onClick={() => { navigate('/items'); window.scrollTo(0, 0); setPopUp(false) }} onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>MEDICAL EQUIPMENT ON RENT<RiArrowDropDownLine className="headerDropDown" /></div>
                         {
                             popUp &&
                             <div className="headerPopUpBox" onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>
                                 <ul className="headerPopUpBoxItems">
-                                    <li className="headerPopUpBoxItem ">Oxygen Concentrator</li>
-                                    <li className="headerPopUpBoxItem">Wheel Chair</li>
-                                    <li className="headerPopUpBoxItem">ICU Bed Fully Automatic</li>
-                                    <li className="headerPopUpBoxItem">Suction Appartaus</li>
-                                    <li className="headerPopUpBoxItem">Digital BP Monitor/Machine</li>
-                                    <li className="headerPopUpBoxItem">I.V. Stand</li>
-                                    <li className="headerPopUpBoxItem">Oxygen Cylinder</li>
-                                    <li className="headerPopUpBoxItem">Portable Suction Machine</li>
-                                    <li className="headerPopUpBoxItem">DVT Pump</li>
-                                    <li className="headerPopUpBoxItem">Air Mattress</li>
-                                    <li className="headerPopUpBoxItem">CPAP Machine</li>
-                                    <li className="headerPopUpBoxItem">Manual Bed</li>
-                                    <li className="headerPopUpBoxItem">ICU Monitor</li>
-                                    <li className="headerPopUpBoxItem">BIPAP Monitor</li>
-                                    <li className="headerPopUpBoxItem">Recliner Chair</li>
-                                    <li className="headerPopUpBoxItem">Chest Vibrator</li>
-                                    <li className="headerPopUpBoxItem">Commode Chair</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Oxygen Concentrator") }}>Oxygen Concentrator</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Wheel Chair") }}>Wheel Chair</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("ICU Bed Fully Automatic") }}>ICU Bed Fully Automatic</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Suction Appartaus") }}>Suction Appartaus</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Digital BP Monitor") }}>Digital BP Monitor/Machine</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("I.V. Stand") }}>I.V. Stand</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Oxygen Cylinder") }}>Oxygen Cylinder</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Portable Suction Machine") }}>Portable Suction Machine</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("DVT Pump") }}>DVT Pump</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Air Mattress") }}>Air Mattress</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("CPAP Machine") }}>CPAP Machine</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Manual Bed") }}>Manual Bed</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("ICU Monitor") }}>ICU Monitor</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("BIPAP Monitor") }}>BIPAP Monitor</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Recliner Chair") }}>Recliner Chair</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Chest Vibrator") }}>Chest Vibrator</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Commode Chair") }}>Commode Chair</li>
 
                                 </ul>
                             </div>
