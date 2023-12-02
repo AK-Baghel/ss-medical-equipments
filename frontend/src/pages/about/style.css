@@ -1,0 +1,17 @@
+.aboutUsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* 
+.checkingTime {
+    display: flex;
+    gap: 1rem;
+    overflow: scroll;
+    width: 85vw;
+
+} */

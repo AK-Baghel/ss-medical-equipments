@@ -7,9 +7,13 @@ import ProductPage from "./pages/productPage/ProductPage"
 // import RecommendTile from "./pages/productPage/recommendTile/RecommendTile"
 import RecommendProduct from "./pages/productPage/recommendProduct/RecommendProduct"
 import Contact from "./components/contact/Contact"
+import Gallery from "./components/gallery/Gallery"
+
+
 
 
 function App() {
+
 
   return (
     <>
@@ -19,6 +23,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/items' element={<RecommendProduct />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/gallery' element={<Gallery />} />
         <Route path="/product/:title" element={<ProductPage />} />
       </Routes>
       <Footer />

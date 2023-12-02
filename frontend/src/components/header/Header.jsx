@@ -55,7 +55,7 @@ const Header = () => {
                         <div className={`headerItem hoverUnderline ${location.pathname === "/" ? "active" : ""}`} onClick={() => { routing("/") }}>HOME</div>
                         <div className={`headerItem hoverUnderline ${location.pathname === "/about" ? "active" : ""}`} onClick={() => { routing("/about") }} >ABOUT US</div>
 
-                        <div className="headerItem headerDrop" onClick={() => { navigate('/items'); window.scrollTo(0, 0); setPopUp(false) }} onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>MEDICAL EQUIPMENT ON RENT<RiArrowDropDownLine className="headerDropDown" /></div>
+                        <div className="headerItem headerDrop" onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>MEDICAL EQUIPMENT ON RENT<RiArrowDropDownLine className="headerDropDown" /></div>
                         {
                             popUp &&
                             <div className="headerPopUpBox" onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>
