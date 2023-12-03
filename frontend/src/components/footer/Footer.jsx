@@ -15,28 +15,28 @@ function Footer() {
             <div className="footerBox1">
                 <div className="footerBox1Section">
                     <div className="footerBox1SectionHeading">Head Office</div>
-                    <div className="footerBox1SectionText">5-L/156, NIT Faridabad, Haryana – 121001</div>
+                    <div className="footerBox1SectionText">78-8asg HAYUAS mniah ASYH India</div>
                 </div>
                 <div className="footerBox1Section">
                     <div className="footerBox1SectionHeading">Links</div>
                     <div className="footerBox1SectionItems">
-                        <div className="footerBox1SectionItem" onClick={() => { navigate("/"); scrollPage(); }} >Wheel Chair</div>
-                        <div className="footerBox1SectionItem" onClick={() => { navigate("/about"); scrollPage(); }} >Suction Apparatus</div>
-                        <div className="footerBox1SectionItem" onClick={() => { navigate("/products"); scrollPage(); }} >Recliner Chair</div>
+                        <div className="footerBox1SectionItem" onClick={() => { navigate("/product/Wheel Chair"); scrollPage(); }} >Wheel Chair</div>
+                        <div className="footerBox1SectionItem" onClick={() => { navigate("/product/Suction Apparatus"); scrollPage(); }} >Suction Apparatus</div>
+                        <div className="footerBox1SectionItem" onClick={() => { navigate("/product/Recliner Chair"); scrollPage(); }} >Recliner Chair</div>
                         {/* <div className="footerBox1SectionItem" onClick={() => { navigate("/about") }} >Sustainability</div> */}
-                        <div className="footerBox1SectionItem" onClick={() => { navigate("/grievance"); scrollPage(); }} >Portable Suction Machine</div>
-                        <div className="footerBox1SectionItem" onClick={() => { navigate("/contact"); scrollPage(); }} >View More</div>
+                        <div className="footerBox1SectionItem" onClick={() => { navigate("/product/Portable Suction Machine"); scrollPage(); }} >Portable Suction Machine</div>
+                        <div className="footerBox1SectionItem" onClick={() => { navigate("/items"); scrollPage(); }} >View All Items</div>
                     </div>
                 </div>
                 <div className="footerBox1Section">
                     <div className="footerBox1SectionHeading">FACTORY ADDRESS</div>
-                    <div className="footerBox1SectionText">49th Mile Stone, Delhi – Mathura Highway, Village : Prithla, Tehsil & Dist : Palwal 121 102, Haryana [INDIA]</div>
+                    <div className="footerBox1SectionText">nasdu asud  HU asd YTA S DSU  usdg Yg sgdbsu [INDIA]</div>
                 </div>
                 <div className="footerBox1Section">
                     <div className="footerBox1SectionHeading">CONTACT US</div>
                     <div className="footerBox1SectionItems">
-                        <div className="footerBox1SectionItem">+919761932233</div>
-                        <div className="footerBox1SectionItem">pkapil@vamanioverseas.com</div>
+                        <div className="footerBox1SectionItem">+9127912320139</div>
+                        <div className="footerBox1SectionItem">xysgas@gmials.com</div>
                     </div>
                 </div>
             </div>
