@@ -1,0 +1,15 @@
+.verticalHeaderContainer {
+    position: absolute;
+    /* background-color: #72B1EC; */
+    background-color: #1F2940;
+    color: white;
+    width: 16vw;
+    height: 90vh;
+    padding: 10px;
+    /* transition: all 0.5s ease; */
+    overflow-y: scroll;
+}
+
+.verticalHeaderContainer::-webkit-scrollbar {
+    display: none;
+}

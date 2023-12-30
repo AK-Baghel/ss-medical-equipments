@@ -1,0 +1,65 @@
+.menuContainer {
+    /* color: black; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menuBox1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.menuImg {
+    width: 5rem;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.menuName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menuLine {
+    content: "";
+    height: 2px;
+    width: 100%;
+    /* background-color: #98C2E9; */
+    background-color: #35446b;
+}
+
+.menuLists {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.menuList {
+    font-size: 1.1rem;
+    display: flex;
+    gap: .6rem;
+    cursor: pointer;
+}
+
+.menuList:hover {
+    text-decoration: underline;
+}
+
+.menuListActive {
+    color: rgb(255, 172, 18);
+}
+
+.menuFooter {
+    position: absolute;
+    bottom: 0;
+}
+
+.menuFooterText {
+    padding-block: 0.7rem;
+    font-size: 0.8rem;
+}

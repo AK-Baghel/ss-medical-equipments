@@ -134,19 +134,20 @@ body {
     /* background-color: yellow; */
     padding-top: 1.5rem;
     /* width: 100vw; */
-    left: 35%;
+    left: 5%;
     /* animation: myAnim 0.5s ease 0s 1 normal forwards; */
     z-index: 9;
 }
 
 .headerPopUpBoxItems {
     /* background-color: rgb(212, 0, 32); */
+    width: 90vw;
     background-color: white;
     /* color: rgb(65, 65, 65); */
     color: black;
     padding: 1rem 1rem;
     overflow: hidden;
-    width: fit-content;
+    /* width: fit-content; */
     cursor: pointer;
     height: 40vh;
     display: flex;

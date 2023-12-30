@@ -1,0 +1,76 @@
+.loginContainer {
+    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/01bb2bad-a0cf-46c7-bc15-6a0a4dcbea31/dcrh3x5-548c0104-ed55-4b75-a3b6-bc1141b9f78c.png/v1/fill/w_1024,h_540,q_80,strp/outrun_retrowave_wallpaper_4k_by_halukaliev_dcrh3x5-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQwIiwicGF0aCI6IlwvZlwvMDFiYjJiYWQtYTBjZi00NmM3LWJjMTUtNmEwYTRkY2JlYTMxXC9kY3JoM3g1LTU0OGMwMTA0LWVkNTUtNGI3NS1hM2I2LWJjMTE0MWI5Zjc4Yy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.xEXOgwGQLpx7RrxMLww8TsC_yFFa7E6y1LZJ3SYkc94');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+    color: white;
+}
+
+.loginBlackShade {
+    background-color: rgba(0, 0, 0, 0.205);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* width: 25vw; */
+}
+
+.loginHeading {
+    width: 15rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.4rem;
+}
+
+.loginText {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.loginUser {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 20rem;
+}
+
+.loginInput {
+    width: 19rem;
+    outline: none;
+    padding: 0.5rem;
+    /* height: ; */
+
+}
+
+.loginRememberBox {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.loginIcon {
+    margin: 0.5rem;
+}
+
+.loginButton {
+    background-color: rgb(201, 64, 255);
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: rgb(209, 98, 253);
+
+}

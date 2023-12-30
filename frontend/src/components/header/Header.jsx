@@ -89,6 +89,8 @@ const Header = () => {
                         {/* <div className={`headerItem hoverUnderline ${location.pathname === "/medical-equipments" ? "active" : ""}`} onClick={() => { routing("/medical-equipments") }} >MEDICAL EQUIPMENT ON RENT</div> */}
                         <div className={`headerItem hoverUnderline ${location.pathname === "/gallery" ? "active" : ""}`} onClick={() => { routing("/gallery") }} >GALLERY</div>
                         <div className={`headerItem hoverUnderline ${location.pathname === "/contact" ? "active" : ""}`} onClick={() => { routing("/contact") }} >CONTACT US</div>
+                        <div className={`headerItem hoverUnderline ${location.pathname === "/dashboard/login" ? "active" : ""}`} onClick={() => { routing("/dashboard/login") }}>LOGIN</div>
+
 
                     </div>
                 </div>

@@ -8,7 +8,7 @@
     overflow-x: hidden;
     width: 84vw;
     left: 16vw;
-    /* transition: all 1s ease; */
+    color: white;
 }
 
 .appLeft {
@@ -20,11 +20,12 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100vw;
-    /* left: 5vw; */
+    color: white;
 
 }
 
-/* .appRight::-webkit-scrollbar {
-    background-color: #1F2940;
-    width: 10px;
-} */
+.hghg {
+    font-size: 1.5rem;
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
+}
