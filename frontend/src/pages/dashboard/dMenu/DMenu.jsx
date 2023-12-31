@@ -28,8 +28,8 @@ function DMenu() {
                 <div className={`menuList ${location.pathname === "/dashboard/master" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/master") }}><FaHome />Master</div>
                 {/* <div className="menuList"><FaTasks />My Tasks<RiArrowDropDownLine /></div> */}
                 <div className={`menuList ${location.pathname === "/dashboard/header" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/header") }}><FaShieldAlt />Header</div>
-                <div className="menuList"><PiBagFill />Job Profile</div>
-                <div className="menuList"><BiSolidCylinder />Induction</div>
+                <div className={`menuList ${location.pathname === "/dashboard/category" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/category") }}><FaShieldAlt />Category</div>
+                <div className={`menuList ${location.pathname === "/dashboard/sub category" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/sub category") }}><FaShieldAlt />Sub Category</div>
                 <div className="menuList"><BsFillGearFill />Utilities<RiArrowDropDownLine /></div>
                 <div className="menuList"><AiFillLike />Suggestion</div>
             </div>

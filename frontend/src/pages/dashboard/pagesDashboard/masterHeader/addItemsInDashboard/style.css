@@ -1,0 +1,65 @@
+.addHeaderSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-block: 1.5rem;
+}
+
+.addHeaderBox1Input {
+    width: 90%;
+    outline: none;
+    height: 3rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #141B2D;
+    background-color: #1F2940;
+    color: white;
+}
+
+.addHeaderBox1Input:focus {
+    border: 1px solid aqua;
+
+}
+
+::placeholder {
+    color: rgb(172, 172, 172);
+    opacity: 1;
+    /* Firefox */
+}
+
+.masterHeaderBox2Sec2Green {
+    background-color: #26a026;
+    transition: all 0.3s ease;
+}
+
+.masterHeaderBox2Sec2Green:hover {
+    background-color: #4bca4b;
+}
+
+.masterHeaderBox2Sec2Red {
+    background-color: #b63030;
+    transition: all 0.3s ease;
+}
+
+.masterHeaderBox2Sec2Red:hover {
+    background-color: #c04040;
+}
+
+.addItemSelect {
+    width: 90%;
+    outline: none;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: none;
+    text-transform: capitalize;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #141B2D;
+    background-color: #1F2940;
+    color: white;
+    cursor: pointer;
+}

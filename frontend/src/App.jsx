@@ -15,9 +15,9 @@ import AppContext from "./components/context/AppContext"
 import DashHeader from "./pages/dashboard/dashHeader/DashHeader"
 import DVerticalHeader from "./pages/dashboard/dVerticalHeader/DVerticalHeader"
 import Master from "./pages/dashboard/pagesDashboard/master/Master"
-
+import MasterItemsDisplay from "./pages/dashboard/pagesDashboard/masterHeader/MasterItemsDisplay"
+import AddItemsInDashboard from "./pages/dashboard/pagesDashboard/masterHeader/addItemsInDashboard/AddItemsInDashboard"
 import "./App.css"
-import MasterHeader from "./pages/dashboard/pagesDashboard/masterHeader/MasterHeader"
 
 function App() {
 
@@ -65,7 +65,10 @@ function App() {
           <Route element={<PrivateComponent />}>
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/dashboard/master' element={<Master />} />
-            <Route path='/dashboard/header' element={<MasterHeader />} />
+
+            <Route path='/dashboard/:title' element={<MasterItemsDisplay />} />
+
+            <Route path='/dashboard/add/:title' element={<AddItemsInDashboard />} />
             <Route path='/dashboard/carousel' element={<Dashboard />} />
           </Route>
 
