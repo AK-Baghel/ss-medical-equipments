@@ -1,0 +1,56 @@
+.modalContainer {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84%;
+    height: 90vh;
+    transition: all 0.5 ease;
+}
+
+.modalBox {
+    width: 30rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    color: white;
+    background-color: #1F2940;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+
+.modalHeading {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.modalText {
+    color: white;
+    /* color: #202B31; */
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.modalButton1 {
+    width: 5rem;
+    border-radius: 8px;
+}
+
+.modalButton2 {
+    width: 5rem;
+    background-color: rgb(255, 63, 63);
+    border-radius: 8px;
+    transition: all 0.3 ease;
+}
+
+.modalButton2:hover {
+    background-color: red;
+}

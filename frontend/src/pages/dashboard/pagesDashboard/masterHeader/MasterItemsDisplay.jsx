@@ -3,15 +3,16 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { useNavigate, useParams } from 'react-router-dom';
 import "./style.css"
-
-
+import Modal from '../../../../components/modal/Modal';
 
 function MasterItemsDisplay() {
     const navigate = useNavigate();
     const [headerArray, setheaderArray] = useState([])
     const [categoryArray, setcategoryArray] = useState([])
     const [subCategoryArray, setsubCategoryArray] = useState([])
-    const [array, setarray] = useState([])
+    // const [array, setarray] = useState([])
+    const [modalShow, setmodalShow] = useState(false)
+    const [dataId, setdataId] = useState('')
 
     let { title } = useParams();
 
@@ -44,6 +45,20 @@ function MasterItemsDisplay() {
             console.error("Error fetching data:", error);
         }
     };
+
+    const dataModal = (id) => {
+        setmodalShow(!modalShow);
+        setdataId(id);
+    }
+
+    const dataDelete = async (id) => {
+        let result = await fetch(`http://localhost:8080/${title === 'sub category' ? 'subcategory' : title}/${id}`, {
+            method: "DELETE"
+        });
+        result = await result.json();
+        if (result)
+            title === "header" ? headerArr() : title === "category" ? categoryArr() : subCategoryArr();
+    }
 
     useEffect(() => {
         headerArr();
@@ -93,7 +108,7 @@ function MasterItemsDisplay() {
                                     }
                                     <div className="masterHeaderBox3ThItem3 masterHeaderBox3Tr masterHeaderBox3Action ">
                                         <FaEdit className='masterHeaderEdit' />
-                                        <MdDelete className='masterHeaderDelete' />
+                                        <MdDelete className='masterHeaderDelete' onClick={() => { dataModal(value._id) }} />
                                     </div>
                                 </div>
                             )
@@ -103,6 +118,12 @@ function MasterItemsDisplay() {
                 </div>
 
             </div>
+            {
+                modalShow ?
+                    <Modal dataModal={dataModal} dataDelete={dataDelete} dataId={dataId} />
+                    : ""
+            }
+
         </div>
     )
 }

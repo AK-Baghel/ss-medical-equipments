@@ -1,0 +1,32 @@
+.uploadBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#file-input {
+    display: none;
+}
+
+#file-input-label {
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    /* border: 1px solid black; */
+    border-radius: 4%;
+    transition: all 0.2s ease;
+    background-color: #1F2940;
+    color: white;
+}
+
+#file-input-label:hover {
+    transition: all 0.3s ease;
+    background-color: white;
+    color: black;
+}
+
+.uploadIcon {
+    font-size: 3rem;
+}

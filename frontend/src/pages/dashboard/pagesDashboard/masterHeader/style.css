@@ -85,12 +85,25 @@
     color: rgb(125, 224, 125);
     font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.masterHeaderEdit:hover {
+    color: rgb(0, 163, 0);
+    transform: scale(1.1);
+
 }
 
 .masterHeaderDelete {
     font-size: 1rem;
     color: rgb(194, 89, 89);
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.masterHeaderDelete:hover {
+    color: rgb(214, 28, 28);
+    transform: scale(1.1);
 }
 
 .masterHeaderBox3TrParent {

@@ -31,7 +31,7 @@ function DMenu() {
                 <div className={`menuList ${location.pathname === "/dashboard/category" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/category") }}><FaShieldAlt />Category</div>
                 <div className={`menuList ${location.pathname === "/dashboard/sub category" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/sub category") }}><FaShieldAlt />Sub Category</div>
                 <div className="menuList"><BsFillGearFill />Utilities<RiArrowDropDownLine /></div>
-                <div className="menuList"><AiFillLike />Suggestion</div>
+                <div className={`menuList ${location.pathname === "/dashboard/product" ? "menuListActive" : ""}`} onClick={() => { navigate("/dashboard/product") }}><FaShieldAlt />Product</div>
             </div>
             <footer className='menuFooter'>
                 <div className="menuLine"></div>

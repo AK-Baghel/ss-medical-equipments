@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { BiSolidUserCircle } from "react-icons/bi"
@@ -42,6 +42,11 @@ function Login({ dashboardToggle }) {
         }
     }
 
+    useEffect(() => {
+        dashboardToggle(false)
+        setvalue(false)
+    }, [])
+
     return (
         <div className="loginContainer">
             <div className="loginBlackShade">
@@ -56,10 +61,10 @@ function Login({ dashboardToggle }) {
                         <input type="password" className="loginInput" placeholder='Password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
                         <AiFillLock className='loginIcon' />
                     </div>
-                    <label className="loginRememberBox">
+                    {/* <label className="loginRememberBox">
                         <input type="checkbox" defaultChecked={remember} onChange={() => setRemember(!remember)} />
                         Remember Me
-                    </label>
+                    </label> */}
                     <div className="loginButton" onClick={signIn}>Sign in</div>
                 </div>
             </div>

@@ -52,7 +52,8 @@ function AddItemsInDashboard() {
             })
         }
 
-        navigate(`/dashboard/${title}`)
+        setInputText("")
+        // navigate(`/dashboard/${title}`)
 
     }
 

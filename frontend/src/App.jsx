@@ -18,6 +18,8 @@ import Master from "./pages/dashboard/pagesDashboard/master/Master"
 import MasterItemsDisplay from "./pages/dashboard/pagesDashboard/masterHeader/MasterItemsDisplay"
 import AddItemsInDashboard from "./pages/dashboard/pagesDashboard/masterHeader/addItemsInDashboard/AddItemsInDashboard"
 import "./App.css"
+import MasterProductDisplay from "./pages/dashboard/pagesDashboard/masterProductDisplay/MasterProductDisplay"
+import AddProducts from "./pages/dashboard/pagesDashboard/masterProductDisplay/addProducts/AddProducts"
 
 function App() {
 
@@ -28,10 +30,6 @@ function App() {
   }
 
   const [toggleMenu, setToggleMenu] = useState(true)
-
-  // const checkLogin = () => {
-  //   setChecking(false)
-  // }
 
   const toggleMenuHandle = () => {
     setToggleMenu(!toggleMenu);
@@ -62,23 +60,37 @@ function App() {
           <Route path="/product/:title" element={<ProductPage />} />
           <Route path='/dashboard/login' element={<Login dashboardToggle={dashboardToggle} />} />
 
+          <Route path='*' element={<Home />} />
+
+
+
+
           <Route element={<PrivateComponent />}>
+
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/dashboard/master' element={<Master />} />
-
             <Route path='/dashboard/:title' element={<MasterItemsDisplay />} />
-
             <Route path='/dashboard/add/:title' element={<AddItemsInDashboard />} />
             <Route path='/dashboard/carousel' element={<Dashboard />} />
+            <Route path='/dashboard/product' element={<MasterProductDisplay />} />
+            <Route path='/dashboard/addproduct' element={<AddProducts />} />
+
           </Route>
 
+
+
+
+
         </Routes>
+
+
 
         {
           !check ?
             <Footer />
             : ""
         }
+
       </AppContext>
 
     </>

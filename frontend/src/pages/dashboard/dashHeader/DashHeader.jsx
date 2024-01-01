@@ -56,7 +56,7 @@ const DashHeader = ({ toggleMenuHandle, toggleMenu }) => {
                             <div className={`dheaderVerticalToggles ${headerVerticalToggle2 ? "dheaderVerticalToggleActive" : ""}`} onClick={() => { headerVerticalToggle(2) }}><FaUserAlt /> User</div>
                         </div>
 
-                        <div className=" dheaderLogo">SS-MEDICAL</div>
+                        {/* <div className=" dheaderLogo">SS-MEDICAL</div> */}
                         {/* <div className={`dheaderItem ${location.pathname === "/" ? "active" : ""}`} onClick={() => { routing("/") }}>Home</div> */}
                         <div className={`dheaderItem ${location.pathname === "/methods" ? "active" : ""}`} onClick={() => { routing("/methods") }} >Methods</div>
                         <div className={`dheaderItem ${location.pathname === "/dashboard" ? "active" : ""}`} onClick={() => { routing("/dashboard") }} >Dashboard</div>
@@ -71,7 +71,7 @@ const DashHeader = ({ toggleMenuHandle, toggleMenu }) => {
                     </div>
 
                     <div className="dheaderRight">
-                        <div className=" dheaderLogo">VPulse</div>
+                        <div className=" dheaderLogo">SS MEDICAL</div>
                         <div ><img className="dheaderFlag" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" alt="" /></div>
                     </div>
                 </div>
