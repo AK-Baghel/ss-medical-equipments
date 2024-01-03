@@ -37,7 +37,7 @@ function Login({ dashboardToggle }) {
         else {
             setvalue(true);
             dashboardToggle(true)
-            navigate('/dashboard')
+            navigate('/dashboard/master')
 
         }
     }

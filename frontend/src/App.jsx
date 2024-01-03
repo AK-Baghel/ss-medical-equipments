@@ -57,17 +57,15 @@ function App() {
           <Route path='/items' element={<RecommendProduct />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/gallery' element={<Gallery />} />
-          <Route path="/product/:title" element={<ProductPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
           <Route path='/dashboard/login' element={<Login dashboardToggle={dashboardToggle} />} />
 
           <Route path='*' element={<Home />} />
 
 
-
-
           <Route element={<PrivateComponent />}>
 
-            <Route path='/dashboard' element={<Dashboard />} />
+            {/* <Route path='/dashboard' element={<Dashboard />} /> */}
             <Route path='/dashboard/master' element={<Master />} />
             <Route path='/dashboard/:title' element={<MasterItemsDisplay />} />
             <Route path='/dashboard/add/:title' element={<AddItemsInDashboard />} />

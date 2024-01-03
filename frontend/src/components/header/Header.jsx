@@ -21,6 +21,22 @@ const Header = () => {
     // const [translateShow, setTranslateShow] = useState(false)
 
 
+    const [uploadedData, setUploadedData] = useState([]);
+
+    const fetchProductData = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/uploadData');
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            const data = await response.json();
+            setUploadedData(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
     const toggleBar = () => {
         setShow(!show);
     }
@@ -38,6 +54,10 @@ const Header = () => {
         setPopUp(false)
         setShow(true)
     }
+
+    useEffect(() => {
+        fetchProductData();
+    }, [])
 
 
     return (
@@ -63,8 +83,14 @@ const Header = () => {
                             popUp &&
                             <div className="headerPopUpBox" onMouseOver={() => { setPopUp(true) }} onMouseOut={() => { setPopUp(false) }}>
                                 <ul className="headerPopUpBoxItems">
-                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Oxygen Concentrator") }}>Oxygen Concentrator</li>
-                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Wheel Chair") }}>Wheel Chair</li>
+                                    {
+                                        uploadedData.map((value) => {
+                                            return (
+                                                <li className="headerPopUpBoxItem" key={value._id} onClick={() => { openPage(`${value._id}`) }}>{value.name}</li>
+                                            )
+                                        })
+                                    }
+                                    {/* <li className="headerPopUpBoxItem" onClick={() => { openPage("Wheel Chair") }}>Wheel Chair</li>
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("ICU Bed Fully Automatic") }}>ICU Bed Fully Automatic</li>
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("Suction Appartaus") }}>Suction Appartaus</li>
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("Digital BP Monitor") }}>Digital BP Monitor/Machine</li>
@@ -79,7 +105,7 @@ const Header = () => {
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("BIPAP Monitor") }}>BIPAP Monitor</li>
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("Recliner Chair") }}>Recliner Chair</li>
                                     <li className="headerPopUpBoxItem" onClick={() => { openPage("Chest Vibrator") }}>Chest Vibrator</li>
-                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Commode Chair") }}>Commode Chair</li>
+                                    <li className="headerPopUpBoxItem" onClick={() => { openPage("Commode Chair") }}>Commode Chair</li> */}
 
                                 </ul>
                                 <div className="headerPopUpBoxButton" onClick={() => { navigate('/items'); window.scrollTo(0, 0); setPopUp(false) }}>View All Items</div>

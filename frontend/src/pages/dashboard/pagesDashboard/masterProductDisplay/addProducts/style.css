@@ -30,3 +30,13 @@
 .uploadIcon {
     font-size: 3rem;
 }
+
+.uploadBoxAlert {
+    color: gray;
+    font-size: 0.7rem;
+}
+
+.uploadBoxAlertRed {
+    color: rgb(255, 68, 68);
+    font-size: 0.7rem;
+}

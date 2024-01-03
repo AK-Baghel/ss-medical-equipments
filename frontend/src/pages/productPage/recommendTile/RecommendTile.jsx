@@ -1,27 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./style.css"
 import { IoClose } from "react-icons/io5"
 import Form from '../../../components/form/Form'
 import { useNavigate } from 'react-router-dom'
 
-function RecommendTile() {
+function RecommendTile({ id }) {
+
     const navigate = useNavigate();
+    const [productData, setproductData] = useState("")
 
     const [showForm, setShowForm] = useState(false)
-    const openPage = (value) => {
-        navigate(`/product/${value}`);
+    const openPage = () => {
+        navigate(`/product/${id}`);
         window.scrollTo(0, 0);
     }
 
+
+
+    const fetchProduct = async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/uploadData/${id}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            const data = await response.json();
+            setproductData(data);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchProduct();
+    }, [id])
+
+
     return (
         <div className="recommendTileContainer">
-            <img className="recommendTileImg" src="https://images.jdmagicbox.com/quickquotes/images_main/mini-portable-oxygen-concentrator-2184655529-5ml65t7d.jpg" alt="" />
-            <div className="recommendTileText">Oxygen Cylinder</div>
+            <img className="recommendTileImg" src={`http://localhost:8080/${productData.image}`} alt="" />
+            <div className="recommendTileText">{productData.name}</div>
             <div className="recommendTileDesc">
-                An Oxygen Cylinder is a non-reactive, high-pressure, seamless tempered steel container in which compressed oxygen gas is kept.
+                {productData.desc}
             </div>
             <div className="recommendTileButtons">
-                <div className="recommendTileButton" onClick={() => { openPage('Digital BP Monitor ') }}>Read More</div>
+                <div className="recommendTileButton" onClick={openPage}>Read More</div>
                 <div className="recommendTileButton" onClick={() => { setShowForm(!showForm) }}>Enquire Now</div>
             </div>
 
@@ -41,11 +64,11 @@ function RecommendTile() {
                             </div>
                             <div className="enquireSection2">
                                 <div className="enquireSection2Image">
-                                    <img className='enquireImage' src="https://images.jdmagicbox.com/quickquotes/images_main/mini-portable-oxygen-concentrator-2184655529-5ml65t7d.jpg" alt="" />
-                                    <div className="enquireTitle">Oxygen Chair</div>
+                                    <img className='enquireImage' src={`http://localhost:8080/${productData.image}`} alt="" />
+                                    <div className="enquireTitle">{productData.name}</div>
                                 </div>
                                 <div className="enquireSection2Form">
-                                    <Form />
+                                    <Form id={id} />
                                 </div>
                             </div>
 

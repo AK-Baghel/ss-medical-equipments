@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css"
 import { IoClose } from "react-icons/io5"
 import Form from '../../components/form/Form'
@@ -13,16 +13,78 @@ function ProductPage() {
 
     const navigate = useNavigate();
     const [showForm, setShowForm] = useState(false)
-    const { title } = useParams();
+    const [productData, setproductData] = useState("")
+    const [uploadedData, setUploadedData] = useState([]);
+    const [randomData, setRandomData] = useState([]);
+    const { id } = useParams();
+
+
+    const fetchProduct = async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/uploadData/${id}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            const data = await response.json();
+            setproductData(data);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchProduct();
+    }, [id])
+
+
+
+
+
+
+    const fetchProductData = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/uploadData');
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            const data = await response.json();
+            setUploadedData(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+    async function fetchRandomData() {
+        try {
+            const response = await fetch('http://localhost:8080/randomProducts');
+            const data = await response.json();
+            setRandomData(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+    useEffect(() => {
+        fetchProductData();
+        fetchRandomData();
+    }, [])
+
+
+    useEffect(() => {
+        console.log(randomData, "vgygcgy");
+    }, [randomData])
 
     return (
         <div className="productPageContainer">
-            <div className="aboutBanner">{title}</div>
+            <div className="aboutBanner">{productData.name}</div>
 
             <div className="productPageSection1">
 
                 <div className="aboutTransText">
-                    {title}
+                    {productData.name}
                 </div>
 
                 <div className="productPageBox2">
@@ -32,10 +94,10 @@ function ProductPage() {
                             The oxygen concentrator works in a very simple way. It is used to provide clear oxygen to the patients. We deliver an Oxygen Concentrator on Rent in Delhi  with delivery at your doorsteps. You can order your concentrator now and we will deliver it to you since you are our esteemed patrons.
                         </div> */}
                         <div className="productPageBox2Section1Heading">
-                            How does it Work?
+                            {productData.title}
                         </div>
                         <div className="productPageBox2Section1Text">
-                            The concentrator pulled in the oxygen and compresses filtered air and then deliver it to the patients. It removes nitrogen and other impurities present in the air making it breathable for the patient. It is a basic way of providing oxygen to the patients as well as valuable for them. Our portable concentrators allow you to take it with you when you are on the go.
+                            {productData.desc}
                         </div>
                         {/* <div className="productPageBox2Section1Heading">
                             Our Concentrator
@@ -46,7 +108,7 @@ function ProductPage() {
                     </div>
 
                     <div className="productPageBox2Section2">
-                        <img className='productImage' src="https://images.jdmagicbox.com/quickquotes/images_main/mini-portable-oxygen-concentrator-2184655529-5ml65t7d.jpg" onClick={() => { setShowForm(!showForm) }} alt="" />
+                        <img className='productImage' src={`http://localhost:8080/${productData.image}`} onClick={() => { setShowForm(!showForm) }} alt="" />
                         <div className="imgDataBoxButton" onClick={() => { setShowForm(!showForm) }}>Enquire Now</div>
                     </div>
 
@@ -55,9 +117,14 @@ function ProductPage() {
                 <div className="youMayLike">You May Also Like</div>
 
                 <div className="productPageBox3">
-                    <RecommendTile />
-                    <RecommendTile />
-                    <RecommendTile />
+                    {
+                        randomData.map((value, index) => {
+                            return (
+                                <RecommendTile id={value._id} key={index} />
+                            )
+                        })
+                    }
+
                 </div>
 
                 <div className="homeButton">
@@ -82,11 +149,11 @@ function ProductPage() {
                             </div>
                             <div className="enquireSection2">
                                 <div className="enquireSection2Image">
-                                    <img className='enquireImage' src="https://images.jdmagicbox.com/quickquotes/images_main/mini-portable-oxygen-concentrator-2184655529-5ml65t7d.jpg" alt="" />
-                                    <div className="enquireTitle">{title}</div>
+                                    <img className='enquireImage' src={`http://localhost:8080/${productData.image}`} alt="" />
+                                    <div className="enquireTitle">{productData.name}</div>
                                 </div>
                                 <div className="enquireSection2Form">
-                                    <Form />
+                                    <Form id={id} />
                                 </div>
                             </div>
 

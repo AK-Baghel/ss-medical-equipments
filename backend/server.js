@@ -8,10 +8,15 @@ import subCategoryData from "./models/masterSubCategory.js";
 import loginData from "./models/masterLogin.js"
 import productData from "./models/masterProduct.js"
 
+import fs from "fs"  //uploadImage
+
+import multer from "multer";    //uploadImage
+
 const app = express();
 dotenv.config();
 app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static('uploads')) //uploadImage & also create "uploads" folder to store the images
 
 connectDb();
 
@@ -35,6 +40,19 @@ app.get("/productData", async (req, resp) => {
     const data = await productData.find();
     resp.send(data)
 })
+
+
+//Random data from model
+app.get('/randomProducts', async (req, res) => {
+    try {
+        const randomProducts = await productData.aggregate([{ $sample: { size: 3 } }]); // Fetch 3 random documents
+        res.json(randomProducts);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 
 
 app.post("/headerData", async (req, resp) => {
@@ -63,6 +81,94 @@ app.post("/productData", async (req, resp) => {
 })
 
 
+//************************************************* IMAGE GET & POST ************************************************************
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // Destination folder for uploaded files
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '.jpg'); // Define file name (fieldname + timestamp + extension)
+    },
+});
+
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 500000 },
+}).single('photo');
+
+app.post('/uploadData', upload, async (req, res) => {
+    try {
+        const { name, title, desc } = req.body;
+        const image = req.file ? req.file.path : ''; // Get the uploaded image path
+
+        const newData = new productData({
+            name,
+            title,
+            desc,
+            image, // Save the image path to the model
+        });
+
+        await newData.save();
+        res.status(201).json({ message: 'Data added successfully!' });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+app.get('/uploadData', async (req, res) => {
+    try {
+        const data = await productData.find(); // Retrieve all data from the model
+        res.status(200).json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+app.get("/uploadData/:id", async (req, resp) => {
+
+    let result = await productData.findOne({ _id: req.params.id });    // Retrieve particulat data from the model
+    if (result)
+        resp.send(result);
+    else
+        resp.send({ result: "NO RECORD FOUND" });
+
+})
+
+
+app.delete('/uploadData/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+
+        const dataToDelete = await productData.findById(id);
+
+        if (!dataToDelete) {
+            return res.status(404).json({ error: 'Data not found' });
+        }
+
+        // Delete associated photo
+        if (dataToDelete.image) {
+            // const image = path.join(__dirname, '..', 'uploads', dataToDelete.image);
+            fs.unlinkSync(dataToDelete.image); // Delete the file
+        }
+
+        await productData.deleteOne({ _id: req.params.id }); // Delete data from database
+
+        res.status(200).json({ message: 'Data deleted successfully' });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+
+//************************************************* IMAGE GET & POST ************************************************************
 
 
 app.delete("/header/:id", async (req, resp) => {

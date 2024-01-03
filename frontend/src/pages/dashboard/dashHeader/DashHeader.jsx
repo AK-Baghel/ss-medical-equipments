@@ -58,8 +58,10 @@ const DashHeader = ({ toggleMenuHandle, toggleMenu }) => {
 
                         {/* <div className=" dheaderLogo">SS-MEDICAL</div> */}
                         {/* <div className={`dheaderItem ${location.pathname === "/" ? "active" : ""}`} onClick={() => { routing("/") }}>Home</div> */}
-                        <div className={`dheaderItem ${location.pathname === "/methods" ? "active" : ""}`} onClick={() => { routing("/methods") }} >Methods</div>
-                        <div className={`dheaderItem ${location.pathname === "/dashboard" ? "active" : ""}`} onClick={() => { routing("/dashboard") }} >Dashboard</div>
+
+                        {/* <div className={`dheaderItem ${location.pathname === "/methods" ? "active" : ""}`} onClick={() => { routing("/methods") }} >Methods</div>
+                        <div className={`dheaderItem ${location.pathname === "/dashboard" ? "active" : ""}`} onClick={() => { routing("/dashboard") }} >Dashboard</div> */}
+
                         <div className="showDashboard" onClick={toggleMenuHandle}>
                             {
                                 toggleMenu ?
